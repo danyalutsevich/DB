@@ -1,0 +1,1 @@
+﻿SELECT * FROM randoms_all 
