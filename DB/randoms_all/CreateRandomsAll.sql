@@ -1,1 +1,1 @@
-﻿CREATE TABLE randoms_all( id UNIQUEIDENTIFIER PRIMARY KEY, integerValue INT, floatingValue FLOAT,dateValue DATE, string TEXT )
+﻿CREATE TABLE randoms_all( id UNIQUEIDENTIFIER PRIMARY KEY, integerValue INT, floatingValue FLOAT,dateValue DATE, string TEXT)

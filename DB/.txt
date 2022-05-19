@@ -74,7 +74,33 @@ Date Sum
 ключевое поле которое индексируется называют первичным ключем
 
 
+DATETIME
+DATETIME2
+
+'2022-05-19' '2022-05-19 12:00:00' '2022-05-19T12:00:00'
+'2022-05-19' = '2022-05-19 00:00:00'
+
+CHAR(N) - текст длиной N символов
+VARCHAR(N) - текст длиной не более N символов
+NCHAR(N) - ровно N символов (ЮНИКОД)
+NVARCHAR(N) - не более N символов (ЮНИКОД)
+TEXT - CLOB (CHAR LARGE OBJECT)
+
+Значения
+'TEXT' - CHAR VARCHAR
+N'TEXT' - NCHAR NVARCHAR
 
 
+В отличие от языков програмирования в БД NULL - отсутствиее данных
+NULL = NULL -> NULL
+NULL <> NULL -> NULL
+2 <> NULL -> NULL
+NULL IS NULL -> TRUE
+2 IS NOT NULL -> TRUE
 
+
+Атрибуты для значений
+
+field INT NULL - допускается NULL - по дефолту
+field INT NOT NULL - не допускается NULL
 
