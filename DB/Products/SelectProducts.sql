@@ -94,3 +94,5 @@ FROM
 	Products P
 ORDER BY
 	LEN(P.Name) DESC
+
+	
