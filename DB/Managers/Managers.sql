@@ -8,25 +8,35 @@
 	Id_chief	UNIQUEIDENTIFIER
 ) ;
 
+
+-- Сотрудники которые работают по совместительству
+-- [Фамилия] [Имя] [Название департамента]
 SELECT 
 	M.Surname [Фамилия],
+	M.Name [Имя],
 	D.Name [Название департамента]
-FROM
-	Managers M -- Левая таблца
-	JOIN Departments D -- Правая таблца
-		ON M.Id_main_dep = D.Id 
-ORDER BY
-1 ASC,
-2 ASC
+FROM 
+	Managers M
+	JOIN Departments D
+		ON M.Id_main_dep = D.Id
+ORDER BY 
+	D.Name ASC
 
+	
+-- Сотрудники у которых есть начальник
+-- [Фамилия сотрудника] [Имя сотрудника] [Фамилия начальника] [Имя начальника]
 SELECT 
-	M.Surname [Фамилия],
-	M.Id_main_dep [Департамент]
-FROM
-	Managers M, -- Левая таблца
-	Departments D -- Правая таблца
-WHERE M.Id_main_dep = D.Id 
-
+	M.Surname [Фамилия сотрудника],
+	M.Name [Имя сотрудника],
+	Ma.Surname [Фамилия начальника],
+	Ma.Name [Имя начальника]
+FROM 
+	Managers M
+	JOIN Managers Ma
+		ON M.Id_chief = Ma.Id
+ORDER BY 
+	Ma.Name ASC
+		
 
 INSERT INTO Managers 
 	( Id, Surname, Name, Secname, Id_main_dep, Id_sec_dep, Id_chief )
