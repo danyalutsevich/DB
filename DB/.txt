@@ -115,3 +115,7 @@ Managers --> Departments
 Id_main_dep    --->     Id
 FOREIGN KEY				PRIMARY KEY
 
+
+Приоритетные обьединения
+
+
