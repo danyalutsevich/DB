@@ -118,4 +118,9 @@ FOREIGN KEY				PRIMARY KEY
 
 Приоритетные обьединения
 
+А JOIN (INNER JOIN) B полное совпадение из обьединения A и B
 
+Типы отношений (relation multiplicity)
+один к одному
+один ко многим
+многие ко многим
