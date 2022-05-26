@@ -16,7 +16,7 @@ FROM
 			Managers M 
 			JOIN (SELECT
 						S.ID_manager [Manager],
-						COUNT(S.Id) *  SUM(S.Cnt) [Sold Items]
+						SUM(S.Cnt) [Sold Items]
 					FROM
 						Sales S
 					WHERE
