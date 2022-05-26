@@ -78,7 +78,7 @@ HAVING
 
 ORDER BY 3
 
-
+-- END OF HOMEWORK
 
 SELECT 
 	P.Name [Name],
