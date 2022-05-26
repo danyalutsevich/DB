@@ -55,3 +55,42 @@ FROM
 WHERE
 	D.Name = N'Бухгалтерия'
 ORDER BY 2 
+
+
+-- топ 3 худших товаров по продажам
+
+
+SELECT TOP 3
+	MAX(P.Name) [Product Name],
+	SUM (S.Cnt) [Quantity],
+	SUM(S.Cnt) * MAX(P.Price) [UAH]
+FROM
+	Sales S
+	JOIN Products P ON S.ID_product = P.Id
+WHERE
+	CAST(S.Moment AS DATE) = CAST(CURRENT_TIMESTAMP - DATEADD(YEAR,1,0) AS DATE) 
+GROUP BY 
+	S.ID_product
+ORDER BY
+	2 
+
+
+-- топ 3 менеджера по продажам
+	
+SELECT TOP 3
+	MAX(M.Surname + ' ' + M.Name ) [Name],
+	SUM( S.Cnt ) [Quantity],
+	SUM(S.Cnt * P.Price) [UAH]
+FROM	
+	Sales S 
+	JOIN Managers M ON S.ID_manager = M.Id
+	JOIN Products P ON P.Id = S.ID_product
+WHERE
+	CAST(S.Moment AS DATE) = CAST(CURRENT_TIMESTAMP - DATEADD(YEAR,1,0) AS DATE) 
+GROUP BY
+	M.Id
+ORDER BY 
+	2 DESC
+
+
+
