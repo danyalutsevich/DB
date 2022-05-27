@@ -174,5 +174,11 @@ ORDER BY
 	2 DESC
 
 
-
-
+	-- card stack 
+SELECT
+	CONCAT(Val.N,' ', Suit.N)
+FROM
+	(VALUES ('6'),('7'),('8'),('9'),('10'),('J'),('Q'),('K'),('A')) Val(N),
+	(VALUES ('Clubs'),('Diamonds'),('Hearts'),('Spades')) Suit(N)
+ORDER BY
+	NEWID()
