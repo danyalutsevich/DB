@@ -12,6 +12,7 @@
 	
 --END
 
+-- Get_year_stat запрос с статистикой за каждый месяц года, *год передавать как аргумент
 
 --CREATE OR ALTER PROC
 --	Get_year_stat
@@ -55,23 +56,67 @@
 --EXEC Find_prod @name = N'свар'
 
 
+--CREATE OR ALTER PROC
+--	Find_man
+--	@fragment AS NVARCHAR(100)
+--AS
+--BEGIN
+
+--	SELECT DISTINCT 
+--		CONCAT(M.Name, ' ',M.Surname,' ', M.Secname)
+--	FROM
+--		Managers M
+--	WHERE
+--		M.Name LIKE ('%' + @fragment + '%') 
+--		OR M.Surname LIKE ('%' + @fragment + '%') 
+--		OR M.Secname LIKE ('%' + @fragment + '%') 
+	
+--END
+
+--EXEC Find_man N'л'
+
+--CREATE OR ALTER PROC
+--	Daily_best_prod 
+--	@date AS DATE
+--AS
+--BEGIN
+
+--	SELECT TOP 1
+--		COUNT(S.ID_product),
+--		MAX(P.Name)
+--	FROM
+--		Sales S
+--		JOIN Products P ON S.ID_product = P.Id
+--	WHERE
+--		CAST(S.Moment AS DATE) = @date
+--	GROUP BY 
+--		S.ID_product
+--	ORDER BY 1 DESC
+--END
+
+--EXEC Daily_best_prod '2021-03-21'
+
+
 CREATE OR ALTER PROC
-	Find_man
-	@fragment as NVARCHAR(100)
+	Daily_best_man 
+	@date AS DATE
 AS
 BEGIN
 
-	SELECT DISTINCT 
-		CONCAT(M.Name, ' ',M.Surname,' ', M.Secname)
+	SELECT TOP 1
+		COUNT(S.ID_manager) [Sold Items],
+		CONCAT(MAX(M.Name), ' ', MAX(M.Surname), ' ',MAX(M.Secname)) [Name],
+		MAX(D.Name) [Department]
 	FROM
-		Managers M
-	WHERE
-		M.Name LIKE ('%'+@fragment+'%') 
-		OR M.Surname LIKE ('%'+@fragment+'%') 
-		OR M.Secname LIKE ('%'+@fragment+'%') 
-	
+		Sales S
+		JOIN Managers M ON S.ID_manager=M.Id
+		JOIN Departments D ON M.Id_main_dep = D.Id
+		WHERE
+		CAST(S.Moment AS DATE) = @date
+	GROUP BY 
+		S.ID_manager
+	ORDER BY 1 DESC
+
 END
 
-EXEC Find_man N'абрам'
-
-
+EXEC Daily_best_man '2021-03-21'
