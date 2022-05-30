@@ -1,0 +1,30 @@
+﻿
+--CREATE PROC 
+/*
+CREATE PROCEDURE 
+	GET_STAT
+AS BEGIN
+
+	SELECT
+		SUM(S.Cnt) [SUM(Cnt)]
+	FROM
+		Sales S
+
+END
+*/
+
+-- Proc Call
+GET_STAT;
+
+EXECUTE GET_STAT;
+
+EXEC GET_STAT;
+
+
+
+
+
+
+
+
+
