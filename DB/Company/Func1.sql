@@ -1,0 +1,29 @@
+﻿
+CREATE OR ALTER FUNCTION
+	random(@bound INT)
+	RETURNS INT
+AS
+BEGIN
+
+	DECLARE @R BIGINT
+	SET @R = CHECKSUM(CURRENT_TIMESTAMP)
+	SET @R = @R*@R%@bound
+	RETURN CAST( ABS(@R) AS INT)
+
+END
+
+SELECT dbo.random(100)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
