@@ -1,6 +1,4 @@
 ﻿
-
-
 CREATE OR ALTER TRIGGER
 OnUpdate
 On Sales
@@ -23,5 +21,6 @@ SET NOCOUNT ON
 	UPDATE Acu_sales
 	SET total_cnt += @cnt,
 		total_sum += @sum
+	WHERE id=1
 
 END
