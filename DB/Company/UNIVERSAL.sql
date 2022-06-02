@@ -25,7 +25,7 @@ BEGIN
 	SET @Dcnt = COALESCE((SELECT SUM(Cnt) FROM deleted),0)
 	SET @Dchecks = COALESCE((SELECT COUNT(ID) FROM deleted),0)
 
-	SET @lastsaledate = (SELECT S.Moment FROM inserted S)
+	SET @lastsaledate = (SELECT MAX(S.Moment) FROM inserted S)
 
 
 	UPDATE Acu_sales
