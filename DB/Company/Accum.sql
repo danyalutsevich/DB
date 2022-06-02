@@ -27,6 +27,9 @@ SELECT * FROM Acu_sales
 -- 184945720,74
 
 
+
+
+
 CREATE OR ALTER TRIGGER 
 	onInsert
 ON Sales 
