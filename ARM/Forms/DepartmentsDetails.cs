@@ -47,6 +47,7 @@ namespace ARM.Forms
 
             labelDepId.Text = id;
 
+            // this query gets the amount of managers in defined department
             var query = @$"SELECT COUNT(*) FROM Managers WHERE Id_main_dep ='{id}'";
 
             using (SqlCommand command = new SqlCommand(query, connection))
