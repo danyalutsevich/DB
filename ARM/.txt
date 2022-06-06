@@ -1,0 +1,25 @@
+﻿Взаимодействие с SQL Server
+
+
+Способы взаимодействия 
+	Присоединенный - на каждое действие отсылается запрос к бд
+	Отсоединенный - БД буферизируется в коллекциях приложения
+	изменения вносятся специальными командами обычно в момент закрытия приложения
+
+Для установки подключения используется строка подключения
+
+Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\luche\source\repos\C#\DB\DB\Database1.mdf;Integrated Security=True
+
+System.Data.SqlClient
+
+ command.ExecuteScalar();
+ command.ExecuteNonQuery();
+ command.ExecuteReader();
+                
+ORM - object relation mapping - отображение данных на обьекты
+создание обьектов с такой же структурой как и у таблицы БД
+
+
+
+
+
