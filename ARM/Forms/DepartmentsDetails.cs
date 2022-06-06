@@ -34,11 +34,26 @@ namespace ARM.Forms
                     while (reader.Read())
                     {
                         listBoxDepartments.Items.Add(new ORM.Departments { Id = reader.GetGuid("Id"), Name = reader.GetString("Name") });
-                        //listBoxDepartments.Items.Add(reader["Name"]);
                     }
 
                 }
             }
+
+        }
+
+        private void listBoxDepartments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var id = ((ORM.Departments)listBoxDepartments.SelectedItems[0]).Id.ToString();
+
+            labelDepId.Text = id;
+
+            var query = @$"SELECT COUNT(*) FROM Managers WHERE Id_main_dep ='{id}'";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                labelAmountOfManagers.Text = command.ExecuteScalar().ToString();
+            }
+
 
         }
     }
