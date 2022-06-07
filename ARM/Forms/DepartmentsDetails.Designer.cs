@@ -31,8 +31,10 @@
             this.listBoxDepartments = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelDepId = new System.Windows.Forms.Label();
-            this.labelAmountOfManagers = new System.Windows.Forms.Label();
+            this.labelAmountOfMainManagers = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelAmountOfSecManagers = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxDepartments
@@ -63,31 +65,51 @@
             this.labelDepId.TabIndex = 1;
             this.labelDepId.Text = "id";
             // 
-            // labelAmountOfManagers
+            // labelAmountOfMainManagers
             // 
-            this.labelAmountOfManagers.AutoSize = true;
-            this.labelAmountOfManagers.Location = new System.Drawing.Point(267, 88);
-            this.labelAmountOfManagers.Name = "labelAmountOfManagers";
-            this.labelAmountOfManagers.Size = new System.Drawing.Size(49, 15);
-            this.labelAmountOfManagers.TabIndex = 1;
-            this.labelAmountOfManagers.Text = "amount";
+            this.labelAmountOfMainManagers.AutoSize = true;
+            this.labelAmountOfMainManagers.Location = new System.Drawing.Point(297, 88);
+            this.labelAmountOfMainManagers.Name = "labelAmountOfMainManagers";
+            this.labelAmountOfMainManagers.Size = new System.Drawing.Size(49, 15);
+            this.labelAmountOfMainManagers.TabIndex = 1;
+            this.labelAmountOfMainManagers.Text = "amount";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(138, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 15);
+            this.label3.Size = new System.Drawing.Size(153, 15);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Amount of Managers:";
+            this.label3.Text = "Amount of Main Managers:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(138, 112);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Amount of Sec Managers:";
+            // 
+            // labelAmountOfSecManagers
+            // 
+            this.labelAmountOfSecManagers.AutoSize = true;
+            this.labelAmountOfSecManagers.Location = new System.Drawing.Point(288, 112);
+            this.labelAmountOfSecManagers.Name = "labelAmountOfSecManagers";
+            this.labelAmountOfSecManagers.Size = new System.Drawing.Size(49, 15);
+            this.labelAmountOfSecManagers.TabIndex = 1;
+            this.labelAmountOfSecManagers.Text = "amount";
             // 
             // DepartmentsDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.labelAmountOfManagers);
+            this.Controls.Add(this.labelAmountOfSecManagers);
+            this.Controls.Add(this.labelAmountOfMainManagers);
             this.Controls.Add(this.labelDepId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxDepartments);
@@ -104,7 +126,9 @@
         private System.Windows.Forms.ListBox listBoxDepartments;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelDepId;
-        private System.Windows.Forms.Label labelAmountOfManagers;
+        private System.Windows.Forms.Label labelAmountOfMainManagers;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelAmountOfSecManagers;
     }
 }
