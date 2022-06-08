@@ -39,7 +39,7 @@ namespace ARM.Forms
             if (updateList)
             {
 
-               
+
 
 
 
@@ -108,6 +108,10 @@ namespace ARM.Forms
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+
+
+
+
             buttonUpdate.Enabled = false;
             if (listBoxDepartments.SelectedIndex == -1)
             {
@@ -129,20 +133,37 @@ namespace ARM.Forms
                 return;
             }
 
-            var query = "UPDATE Departments SET Name = @name WHERE id = @id";
+            // confirm update
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+            var res = MessageBox.Show("Apply changes?", "", MessageBoxButtons.YesNo);
+
+            if (res == DialogResult.No)
             {
-                command.Parameters.Add("@name", SqlDbType.NVarChar);
-                command.Parameters.Add("@id", SqlDbType.UniqueIdentifier);
-
-                command.Parameters["@name"].Value = NewName;
-                command.Parameters["@id"].Value = Guid.Parse(id);
-
-                command.ExecuteNonQuery();
+                return;
             }
+            try
+            {
 
-            Task.Run(()=> { UpdateListBox(); });
+                var query = "UPDATE Departments SET Name = @name WHERE id = @id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("@name", SqlDbType.NVarChar);
+                    command.Parameters.Add("@id", SqlDbType.UniqueIdentifier);
+
+                    command.Parameters["@name"].Value = NewName;
+                    command.Parameters["@id"].Value = Guid.Parse(id);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Update error {ex.Message}");
+            }
+                MessageBox.Show("Successfully updated");
+
+            Task.Run(() => { UpdateListBox(); });
 
         }
 
