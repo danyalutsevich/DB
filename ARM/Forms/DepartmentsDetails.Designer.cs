@@ -35,6 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelAmountOfSecManagers = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelSecManPar = new System.Windows.Forms.Label();
+            this.textBoxUpdate = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxDepartments
@@ -101,13 +106,63 @@
             this.labelAmountOfSecManagers.TabIndex = 1;
             this.labelAmountOfSecManagers.Text = "amount";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(138, 138);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(212, 15);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Amount of Sec Managers: with params";
+            // 
+            // labelSecManPar
+            // 
+            this.labelSecManPar.AutoSize = true;
+            this.labelSecManPar.Location = new System.Drawing.Point(356, 138);
+            this.labelSecManPar.Name = "labelSecManPar";
+            this.labelSecManPar.Size = new System.Drawing.Size(49, 15);
+            this.labelSecManPar.TabIndex = 1;
+            this.labelSecManPar.Text = "amount";
+            // 
+            // textBoxUpdate
+            // 
+            this.textBoxUpdate.Location = new System.Drawing.Point(204, 165);
+            this.textBoxUpdate.Name = "textBoxUpdate";
+            this.textBoxUpdate.Size = new System.Drawing.Size(100, 23);
+            this.textBoxUpdate.TabIndex = 2;
+            this.textBoxUpdate.TextChanged += new System.EventHandler(this.textBoxUpdate_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(138, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 15);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Edit name";
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(319, 165);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdate.TabIndex = 3;
+            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
             // DepartmentsDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.textBoxUpdate);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelSecManPar);
             this.Controls.Add(this.labelAmountOfSecManagers);
             this.Controls.Add(this.labelAmountOfMainManagers);
             this.Controls.Add(this.labelDepId);
@@ -130,5 +185,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelAmountOfSecManagers;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelSecManPar;
+        private System.Windows.Forms.TextBox textBoxUpdate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonUpdate;
     }
 }
