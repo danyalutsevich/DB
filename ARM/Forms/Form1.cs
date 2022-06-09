@@ -96,5 +96,10 @@ namespace ARM
             }
 
         }
+
+        private void buttonProducts_Click(object sender, EventArgs e)
+        {
+            new Forms.Products().ShowDialog(this);
+        }
     }
 }

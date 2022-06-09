@@ -40,6 +40,11 @@
             this.textBoxUpdate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonUpdate = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonCreate = new System.Windows.Forms.Button();
+            this.textBoxCreate = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxDepartments
@@ -126,9 +131,9 @@
             // 
             // textBoxUpdate
             // 
-            this.textBoxUpdate.Location = new System.Drawing.Point(204, 165);
+            this.textBoxUpdate.Location = new System.Drawing.Point(250, 166);
             this.textBoxUpdate.Name = "textBoxUpdate";
-            this.textBoxUpdate.Size = new System.Drawing.Size(100, 23);
+            this.textBoxUpdate.Size = new System.Drawing.Size(230, 23);
             this.textBoxUpdate.TabIndex = 2;
             this.textBoxUpdate.TextChanged += new System.EventHandler(this.textBoxUpdate_TextChanged);
             // 
@@ -137,13 +142,13 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(138, 168);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 15);
+            this.label5.Size = new System.Drawing.Size(78, 15);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Edit name";
+            this.label5.Text = "Update name";
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(319, 165);
+            this.buttonUpdate.Location = new System.Drawing.Point(486, 166);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdate.TabIndex = 3;
@@ -151,11 +156,61 @@
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(138, 198);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 15);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Create";
+            // 
+            // buttonCreate
+            // 
+            this.buttonCreate.Location = new System.Drawing.Point(486, 195);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(75, 23);
+            this.buttonCreate.TabIndex = 5;
+            this.buttonCreate.Text = "Create";
+            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            // 
+            // textBoxCreate
+            // 
+            this.textBoxCreate.Location = new System.Drawing.Point(250, 195);
+            this.textBoxCreate.Name = "textBoxCreate";
+            this.textBoxCreate.Size = new System.Drawing.Size(230, 23);
+            this.textBoxCreate.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(138, 227);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 15);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Delete";
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(356, 223);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 5;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // DepartmentsDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.textBoxCreate);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.buttonCreate);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.textBoxUpdate);
             this.Controls.Add(this.label5);
@@ -190,5 +245,10 @@
         private System.Windows.Forms.TextBox textBoxUpdate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.TextBox textBoxCreate;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

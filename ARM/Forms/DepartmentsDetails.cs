@@ -157,11 +157,11 @@ namespace ARM.Forms
                     command.ExecuteNonQuery();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Update error {ex.Message}");
             }
-                MessageBox.Show("Successfully updated");
+            MessageBox.Show("Successfully updated");
 
             Task.Run(() => { UpdateListBox(); });
 
@@ -177,6 +177,93 @@ namespace ARM.Forms
             {
                 buttonUpdate.Enabled = true;
             }
+        }
+
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+
+            string name = textBoxCreate.Text;
+
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Enter new name");
+            }
+
+            using (var command = new SqlCommand("SELECT COUNT(*) FROM Departments WHERE Name = @name", connection))
+            {
+
+                command.Parameters.Add("@name", SqlDbType.NVarChar);
+                command.Parameters["@name"].Value = name;
+
+                if (!command.ExecuteScalar().Equals(0))
+                {
+
+                    MessageBox.Show($"The department whih name {name} already exists");
+                    return;
+
+                }
+
+                command.CommandText = "INSERT INTO Departments (id, name) VALUES (NEWID(),@name)";
+
+                try
+                {
+                    command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"INSERT ERROR {ex.Message}");
+                    return;
+                }
+
+                MessageBox.Show("INSERT SUCCESS");
+                UpdateListBox();
+
+            }
+
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+
+            var id = labelDepId.Text;
+
+
+            if (listBoxDepartments.SelectedIndex == -1)
+            {
+                MessageBox.Show("Select an index");
+                return;
+            }
+
+            if (MessageBox.Show("Are u sure bout dat?", "", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            using (var command = new SqlCommand("DELETE FROM Departments WHERE id = @id", connection))
+            {
+
+                command.Parameters.Add("@id", SqlDbType.UniqueIdentifier);
+                command.Parameters["@id"].Value = Guid.Parse(id);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Successfully deleted");
+                    UpdateListBox();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+
+
+
         }
     }
 }

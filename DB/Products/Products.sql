@@ -4,6 +4,10 @@
 	Price		FLOAT  NOT NULL
 ) ;
 
+SELECT * FROM Products ORDER BY 2
+
+SELECT * FROM Products ORDER BY 2 OFFSET 5 ROWS FETCH NEXT 5 ROWS ONLY
+
 INSERT INTO Products
 	( Id, Name,	Price	)
 VALUES

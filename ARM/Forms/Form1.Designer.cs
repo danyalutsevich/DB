@@ -41,6 +41,7 @@
             this.buttonDepDetails = new System.Windows.Forms.Button();
             this.buttonCloudConnect = new System.Windows.Forms.Button();
             this.labelGoogleCloud = new System.Windows.Forms.Label();
+            this.buttonProducts = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -162,6 +163,16 @@
             this.labelGoogleCloud.TabIndex = 6;
             this.labelGoogleCloud.Text = "Google Cloud SQL Server";
             // 
+            // buttonProducts
+            // 
+            this.buttonProducts.Location = new System.Drawing.Point(173, 78);
+            this.buttonProducts.Name = "buttonProducts";
+            this.buttonProducts.Size = new System.Drawing.Size(75, 23);
+            this.buttonProducts.TabIndex = 4;
+            this.buttonProducts.Text = "Details";
+            this.buttonProducts.UseVisualStyleBackColor = true;
+            this.buttonProducts.Click += new System.EventHandler(this.buttonProducts_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -169,6 +180,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelGoogleCloud);
             this.Controls.Add(this.buttonCloudConnect);
+            this.Controls.Add(this.buttonProducts);
             this.Controls.Add(this.buttonDepDetails);
             this.Controls.Add(this.labelSalesCount);
             this.Controls.Add(this.labelProductsCount);
@@ -203,5 +215,6 @@
         private System.Windows.Forms.Button buttonDepDetails;
         private System.Windows.Forms.Button buttonCloudConnect;
         private System.Windows.Forms.Label labelGoogleCloud;
+        private System.Windows.Forms.Button buttonProducts;
     }
 }
