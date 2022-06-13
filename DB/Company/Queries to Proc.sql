@@ -20,7 +20,7 @@ BEGIN
 	ORDER BY MONTH(S.Moment)
 END
 
-EXEC Get_year_stat @year = 2022
+EXECUTE Get_year_stat @year = 2021
 
 
 
